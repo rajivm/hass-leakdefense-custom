@@ -1,6 +1,6 @@
 {
   "domain": "lds",
-  "name": "LeakDefense",
+  "name": "Leak Defense",
   "version": "1.0.0",
   "config_flow": true,
   "documentation": "https://www.catchaleak.com",

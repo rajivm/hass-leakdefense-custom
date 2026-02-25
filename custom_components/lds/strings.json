@@ -2,7 +2,7 @@
   "config": {
     "step": {
       "user": {
-        "title": "Leak Defense (Unofficial)",
+        "title": "Leak Defense",
         "description": "**Unofficial integration — not affiliated with or endorsed by Leak Defense or Sentinel Hydrosolutions, LLC.** Use at your own risk. This integration can open and close physical water valves; incorrect use may cause property damage or failure to detect leaks. No support is provided.\n\nEnter your Leak Defense account credentials.",
         "data": {
           "username": "Email address",

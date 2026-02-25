@@ -1,4 +1,4 @@
-# Unofficial Leak Defense for Home Assistant
+# Unofficial Leak Defense Integration for Home Assistant
 
 An unofficial Home Assistant integration for [Leak Defense](https://www.catchaleak.com) smart water leak detection system.
 
@@ -6,11 +6,19 @@ An unofficial Home Assistant integration for [Leak Defense](https://www.catchale
 
 ---
 
-## Warning
+## ⚠️ IMPORTANT: LEGAL DISCLAIMER & LIABILITY WAIVER
 
-**This integration controls physical water shutoff valves and alarm thresholds in your home or building. Incorrect configuration or software defects could result in your water being shut off unexpectedly, alarms failing to trigger, or other unintended physical consequences. Use entirely at your own risk.**
+**By installing or using this software, you acknowledge and agree to the following:**
 
-The author(s) of this software make no guarantees of correctness, reliability, or fitness for any purpose. See the [license](#license) for the full disclaimer.
+1.  **PHYSICAL IMPACT & RISK:** This software controls physical water valves and alarm thresholds. Defects in code, Home Assistant logic errors, or network latency can result in **unintended water shutoffs** or **failure to detect/stop a leak**.
+2.  **NO WARRANTY:** This integration is provided "as is" and "as available." The authors make no guarantees of reliability, accuracy, or fitness for the purpose of leak detection.
+3.  **LIMITATION OF LIABILITY:** In no event shall the authors be liable for any claims or damages (whether in contract, tort, or otherwise), including but not limited to:
+    * **Property Damage:** Water damage, flooding, mold, or structural issues.
+    * **Financial Loss:** High water bills, plumbing costs, or loss of insurance coverage.
+    * **Life Safety:** This software is **NOT** intended for use in systems where failure could lead to personal injury (e.g., shared fire sprinkler lines).
+4.  **INSURANCE & WARRANTY:** Use of this integration may void your manufacturer warranty or invalidate homeowners' insurance credits related to leak detection. You are responsible for verifying your policy terms.
+5.  **UNOFFICIAL API:** This relies on undocumented API behavior obtained via network interception. The manufacturer may change or disable this access at any time without notice.
+See `LICENSE` for the full terms.
 
 ---
 
@@ -56,21 +64,6 @@ These values do not change and can be reused indefinitely.
 
 ---
 
-## Disclaimer and Limitation of Liability
-
-This software is an independent, community-developed project and is provided **"as is"**, without warranty of any kind, express or implied.
-
-- This project is **not affiliated with, sponsored by, or endorsed by** LeakDefense, CatchALeak, Sentinel Hydrosolutions, LLC, Watts, or any related entity.
-- The LeakDefense name and any associated trademarks belong to their respective owners.
-- This integration uses an **unofficial API** that is not publicly documented and may change or break at any time without notice.
-- The author(s) provide **no support**, make no commitment to maintain this project, and accept no responsibility for any outcome resulting from its use.
-- Use of this integration may **violate the LeakDefense Terms of Service**. You are solely responsible for determining whether your use is permitted.
-- Because this software can **open and close water valves and modify alarm thresholds**, a defect or misconfiguration could cause property damage, flooding, or failure to detect a leak. The author(s) expressly disclaim all liability for any such outcomes.
-
-See `LICENSE` for the full terms.
-
----
-
 ## License
 
-BSD 3-Clause License. See [LICENSE](LICENSE).
+MIT License. See [LICENSE](LICENSE).

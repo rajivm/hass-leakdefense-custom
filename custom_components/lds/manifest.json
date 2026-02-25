@@ -1,5 +1,5 @@
 {
-  "domain": "leakdefense",
+  "domain": "lds",
   "name": "LeakDefense",
   "version": "1.0.0",
   "config_flow": true,

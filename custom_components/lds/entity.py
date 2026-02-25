@@ -30,7 +30,7 @@ class LeakDefensePanelEntity(CoordinatorEntity[LeakDefenseCoordinator]):
     def device_info(self) -> dict:
         panel = self._panel
         return {
-            "identifiers": {("leakdefense", str(self._panel_id))},
+            "identifiers": {("lds", str(self._panel_id))},
             "name": f"LeakDefense {self._panel_name}",
             "manufacturer": "LeakDefense",
             "model": "LDS Panel",

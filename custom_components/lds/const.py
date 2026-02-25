@@ -1,4 +1,4 @@
-DOMAIN = "leakdefense"
+DOMAIN = "lds"
 BASE_URL = "https://www.catchaleak.com/rest/v1/api"
 CONF_DEVICE_ID = "device_id"
 DEFAULT_SCAN_INTERVAL = 20  # seconds — matches API UpdateInterval

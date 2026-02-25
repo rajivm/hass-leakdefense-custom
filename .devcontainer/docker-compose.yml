@@ -10,7 +10,7 @@ services:
     image: ghcr.io/home-assistant/home-assistant:stable
     volumes:
       - ha-config:/config
-      - ../custom_components/leakdefense:/config/custom_components/leakdefense:ro
+      - ../custom_components/lds:/config/custom_components/lds:ro
     network_mode: host
     privileged: true
     restart: unless-stopped

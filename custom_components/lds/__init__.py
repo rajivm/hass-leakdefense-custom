@@ -1,4 +1,6 @@
 """LeakDefense Home Assistant integration."""
+""" Unofficial Leak Defense Integration """
+""" Provided "as-is" under the MIT License. Use at your own risk."""
 from __future__ import annotations
 
 from homeassistant.config_entries import ConfigEntry

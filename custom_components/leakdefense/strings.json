@@ -1,0 +1,23 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to LeakDefense",
+        "description": "Enter your LeakDefense API credentials. You can find the token and device ID by proxying the LeakDefense mobile app.",
+        "data": {
+          "token": "API Token",
+          "device_id": "Device ID"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid token or device ID.",
+      "cannot_connect": "Could not connect to the LeakDefense API.",
+      "no_panels": "No LeakDefense panels found on this account.",
+      "unknown": "Unexpected error. Check the logs for details."
+    },
+    "abort": {
+      "already_configured": "This account is already configured."
+    }
+  }
+}

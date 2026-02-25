@@ -1,0 +1,30 @@
+{
+  "name": "HA + Claude Code Dev",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "devcontainer",
+  "workspaceFolder": "/workspace",
+  "features": {
+    // Installs Node.js (Required for Claude Code)
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylint",
+        "visualstudioexptteam.vscodeintellicode",
+        "kevinrose.vsc-home-assistant" // Awesome HA helper
+      ]
+    }
+  },
+  // Automatically install Claude Code CLI on startup
+  "postCreateCommand": "npm install -g @anthropic-ai/claude-code",
+  // This is vital for LXC: it ensures the container runs as a non-root user
+  "remoteUser": "vscode",
+  "mounts": [
+    // Mounts your local SSH keys so Claude Code can push to GitHub
+    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,readonly"
+  ]
+}

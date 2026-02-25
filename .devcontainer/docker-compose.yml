@@ -1,0 +1,21 @@
+services:
+  devcontainer:
+    image: mcr.microsoft.com/devcontainers/python:3.12-bookworm
+    volumes:
+      - ..:/workspace:cached
+    command: sleep infinity
+    network_mode: host
+
+  homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:stable
+    volumes:
+      - ha-config:/config
+      - ../custom_components/leakdefense:/config/custom_components/leakdefense:ro
+    network_mode: host
+    privileged: true
+    restart: unless-stopped
+    environment:
+      - TZ=UTC
+
+volumes:
+  ha-config:

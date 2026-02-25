@@ -1,0 +1,10 @@
+{
+  "domain": "leakdefense",
+  "name": "LeakDefense",
+  "version": "1.0.0",
+  "config_flow": true,
+  "documentation": "https://www.catchaleak.com",
+  "requirements": [],
+  "codeowners": [],
+  "iot_class": "cloud_polling"
+}

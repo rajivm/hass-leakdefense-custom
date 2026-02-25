@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker version --format '{{.Server.Version}}' 2>&1 && docker ps 2>&1 | head -5)",
+      "Bash(which devcontainer:*)",
+      "Bash(cd /home/devuser/projects/ha-leakdefense/.devcontainer && docker compose up -d 2>&1)"
+    ]
+  }
+}

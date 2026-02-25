@@ -3,8 +3,10 @@
   "name": "Unofficial Leak Defense",
   "version": "0.0.1",
   "config_flow": true,
-  "documentation": "https://www.catchaleak.com",
+  "documentation": "https://github.com/rajivm/hass-leakdefense-custom/",
+  "issue_tracker": "https://github.com/rajivm/hass-leakdefense-custom/issues",
   "requirements": [],
-  "codeowners": [],
-  "iot_class": "cloud_polling"
+  "codeowners": ["@rajivm"],
+  "iot_class": "cloud_polling",
+  "integration_type": "hub"
 }

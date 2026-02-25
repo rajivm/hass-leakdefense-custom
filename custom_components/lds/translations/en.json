@@ -2,18 +2,18 @@
   "config": {
     "step": {
       "user": {
-        "title": "Connect to LeakDefense",
-        "description": "Enter your LeakDefense API credentials. You can find the token and device ID by proxying the LeakDefense mobile app.",
+        "title": "Leak Defense (Unofficial)",
+        "description": "**Unofficial integration — not affiliated with or endorsed by Leak Defense or Sentinel Hydrosolutions, LLC.** Use at your own risk. This integration can open and close physical water valves; incorrect use may cause property damage or failure to detect leaks. No support is provided.\n\nEnter your Leak Defense account credentials.",
         "data": {
-          "token": "API Token",
-          "device_id": "Device ID"
+          "username": "Email address",
+          "password": "Password"
         }
       }
     },
     "error": {
-      "invalid_auth": "Invalid token or device ID.",
-      "cannot_connect": "Could not connect to the LeakDefense API.",
-      "no_panels": "No LeakDefense panels found on this account.",
+      "invalid_auth": "Invalid email address or password.",
+      "cannot_connect": "Could not connect to the Leak Defense API.",
+      "no_panels": "No Leak Defense panels found on this account.",
       "unknown": "Unexpected error. Check the logs for details."
     },
     "abort": {

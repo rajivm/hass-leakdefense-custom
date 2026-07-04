@@ -155,6 +155,7 @@ class LeakDefenseCoordinator(DataUpdateCoordinator[list[dict]]):
                 "ApiSource": 3,
             },
             "HexRequest": {
+                "value": scene,
                 "Scene": scene,
                 "deviceId": panel_id,
             },

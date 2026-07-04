@@ -10,7 +10,7 @@ from homeassistant.core import HomeAssistant
 from .const import CONF_DEVICE_ID, DOMAIN
 from .coordinator import LeakDefenseCoordinator
 
-PLATFORMS = ["sensor", "binary_sensor", "switch", "number"]
+PLATFORMS = ["sensor", "binary_sensor", "switch", "number", "select"]
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:

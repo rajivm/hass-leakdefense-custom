@@ -131,6 +131,49 @@ class LeakDefenseCoordinator(DataUpdateCoordinator[list[dict]]):
             raise Exception(f"Error setting time to alarm: {err}") from err
         await self.async_request_refresh()
 
+    async def async_set_scene(self, panel_id: int, scene: str) -> None:
+        """Switch a panel's scene (HOME / STANDBY / AWAY).
+
+        Sends a dedicated SetScene command carrying the target scene/mode while
+        preserving the panel's current trip-time, trip-rate and valve state so
+        nothing else is altered by the switch.
+        """
+        panel = self._panel_by_id(panel_id)
+        minutes = int(panel.get("TimerCountdownMinutes", panel.get("CountdownTimer", 20)))
+        trip_val = int(panel.get("TripValue", 10))
+        water_on = bool(panel.get("WaterOn", True))
+        payload = {
+            "ApiSource": 3,
+            "ReturnPanelVM": True,
+            "LegacyRequest": {
+                "id": panel_id,
+                "mode": scene,
+                "tripTime": minutes,
+                "tripVal": trip_val,
+                "waterOff": not water_on,
+                "clearAlarm": False,
+                "ApiSource": 3,
+            },
+            "HexRequest": {
+                "value": scene,
+                "Scene": scene,
+                "deviceId": panel_id,
+            },
+        }
+        try:
+            async with self._session.post(
+                f"{BASE_URL}/Command/SetScene",
+                headers=self._headers(),
+                json=payload,
+            ) as resp:
+                resp.raise_for_status()
+                result = await resp.json()
+                if not result.get("Success"):
+                    raise Exception(f"SetScene failed: {result.get('ErrorMsg')}")
+        except aiohttp.ClientError as err:
+            raise Exception(f"Error setting scene: {err}") from err
+        await self.async_request_refresh()
+
     async def async_set_valve(self, panel_id: int, valve_open: bool, panel: dict) -> None:
         """Send a valve open/close command, then refresh coordinator data."""
         scene = panel.get("Scene", "HOME")

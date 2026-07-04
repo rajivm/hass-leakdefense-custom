@@ -29,6 +29,7 @@ Each Leak Defense panel registered to your account is exposed as a Home Assistan
 | Entity | Type | Description |
 |---|---|---|
 | Water | Switch | Open or close the main water shutoff valve |
+| Scene | Select | Switch the panel mode between Home, Standby, and Away |
 | Flow Rate | Sensor | Current flow as a percentage of the trip threshold |
 | Alarm | Binary Sensor | On when the panel is in a leak alarm state |
 | Connectivity | Binary Sensor | On when the panel is online |

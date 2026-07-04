@@ -134,11 +134,9 @@ class LeakDefenseCoordinator(DataUpdateCoordinator[list[dict]]):
     async def async_set_scene(self, panel_id: int, scene: str) -> None:
         """Switch a panel's scene (HOME / STANDBY / AWAY).
 
-        The LeakDefense cloud carries the active scene ("mode") on every command
-        request and echoes back the updated panel. We reuse the SetTripTime
-        command endpoint, changing only the scene/mode while preserving the
-        panel's current trip-time, trip-rate and valve state so nothing else is
-        altered by the switch.
+        Sends a dedicated SetScene command carrying the target scene/mode while
+        preserving the panel's current trip-time, trip-rate and valve state so
+        nothing else is altered by the switch.
         """
         panel = self._panel_by_id(panel_id)
         minutes = int(panel.get("TimerCountdownMinutes", panel.get("CountdownTimer", 20)))
@@ -157,14 +155,13 @@ class LeakDefenseCoordinator(DataUpdateCoordinator[list[dict]]):
                 "ApiSource": 3,
             },
             "HexRequest": {
-                "value": minutes,
                 "Scene": scene,
                 "deviceId": panel_id,
             },
         }
         try:
             async with self._session.post(
-                f"{BASE_URL}/Command/SetTripTime",
+                f"{BASE_URL}/Command/SetScene",
                 headers=self._headers(),
                 json=payload,
             ) as resp:
